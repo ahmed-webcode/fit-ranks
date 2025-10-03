@@ -87,13 +87,23 @@ All colors MUST be HSL.
   }
   
   .gym-card {
-    @apply bg-card border border-border rounded-xl shadow-lg;
+    @apply bg-card border border-border rounded-xl shadow-lg transition-all duration-300;
     background: linear-gradient(145deg, hsl(210 11% 15%), hsl(210 40% 20%));
+  }
+  
+  .gym-card:hover {
+    @apply border-primary/50 shadow-xl;
+    transform: translateY(-2px);
   }
   
   .gym-button-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200;
     box-shadow: 0 4px 14px 0 hsl(var(--primary) / 0.39);
+  }
+  
+  .gym-button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px 0 hsl(var(--primary) / 0.5);
   }
   
   .gym-button-secondary {
@@ -105,8 +115,32 @@ All colors MUST be HSL.
   }
   
   .rank-badge {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium transition-all duration-200;
     background: linear-gradient(135deg, hsl(var(--neon-green)), hsl(var(--electric-blue)));
     color: hsl(var(--background));
+  }
+  
+  .rank-badge:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-200;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/50;
   }
 }

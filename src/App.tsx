@@ -11,6 +11,9 @@ import Workout from "./pages/Workout";
 import Analytics from "./pages/Analytics";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
+import Social from "./pages/Social";
+import Templates from "./pages/Templates";
+import BodyTracker from "./pages/BodyTracker";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { BottomNavigation } from "./components/BottomNavigation";
 import { useAuth } from "./hooks/useAuth";
@@ -75,6 +78,30 @@ const AppContent = () => {
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/social" 
+          element={
+            <ProtectedRoute>
+              <Social />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/templates" 
+          element={
+            <ProtectedRoute>
+              <Templates />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/body-tracker" 
+          element={
+            <ProtectedRoute>
+              <BodyTracker />
             </ProtectedRoute>
           } 
         />
